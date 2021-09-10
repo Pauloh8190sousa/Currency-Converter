@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 
 export default function Conversor(props) {
 
     const [moedaA, setMoedaA] = useState("");
     const [moedaB, setMoedaB] = useState(0);
+    const [select, setSelect] = useState([]);
+    const [input1, setInput1] = useState("");
+    const [input2, setInput2] = useState("");
 
+ 
 
-    async function converter() {
-        console.log(moedaA);
+    useEffect(async () => {
+        setSelect(["dados"]);
 
-    }
+    }, []);
 
     return (
         <React.Fragment>
@@ -20,30 +24,26 @@ export default function Conversor(props) {
                     <input
                         type="text"
                         placeholder="digite o valor"
-                        onChange={(e) => { setMoedaA(e.target.value) }}
+                        value={input1}
+                        onChange={(e) => { setInput2(e.target.value) }}
                     />
-                    <select>
-                        <option value="Currency">Currency</option>
-                    </select>
+                    {select.map(item => {
+                        <select>
+                            <option value={item}>{item}</option>
+                        </select>
+                    })}
                 </div>
                 <span>=</span>
                 <div>
                     <input
                         type="text"
                         placeholder="digite o valor"
-
+                        
                     />
                     <select>
                         <option value="Currency">Currency</option>
                     </select>
                 </div>
-                <button
-                    type="button"
-                    onClick={converter}
-                >
-                    Converter
-                </button>
-                <h2>Valor convertido</h2>
             </div>
         </React.Fragment>
     );
