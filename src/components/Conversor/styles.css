@@ -21,7 +21,9 @@ input, select {
 select {
     width: 100px;
     margin-left: 1rem;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    border: 0 1px;
+    
 }
 
 span {
@@ -35,11 +37,14 @@ button {
     width: 150px;
     height: 2.25rem;
     border: 1px solid rgb(6, 248, 66);
+    color: white;
     background: rgb(6, 248, 66);
     outline: none;
     font-size: medium;
     font-weight: bold;
+    margin-left: 0.50rem;
     border-radius: 2rem;
+    cursor: pointer;
 }
 
 button:hover {
@@ -47,3 +52,17 @@ button:hover {
     
 }
 
+.btn-limpar {
+    margin-top: 2rem;
+    width: 150px;
+    height: 2.25rem;
+    border: 1px solid rgb(255,10,35);
+    color: white;
+    background: rgb(255,10,35);
+    outline: none;
+    font-size: 0.90rem;
+    font-weight: bold;
+    margin-left: 2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
